@@ -14,3 +14,7 @@ The main trade-off here is that in optimizing, I am purchasing more the one asse
 Seeing the results based on the inputs, however, I find that the optimal set of buys has been achieved as each aspect of the challenge was met: (1) keeping allocations as close as possible to their targets and (2) not spending more money than the client already has. 
 
 If refactoring, I would look into dynamic programming options like the KnapSack or Bin Packing algorthimn to find a more optimal set of purchases.
+
+To run in Terminal:
+1) To get the optimal set of buys, type ruby allocation_challenge.rb.
+2) To run tests, type ruby tests.rb.
