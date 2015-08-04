@@ -8,6 +8,7 @@ class Account
     @allocations = []
   end
 
+  #Calculates how much money has been spent by the allocation
   def spent
     total = 0
     @allocations.each do |allocation|
@@ -16,15 +17,18 @@ class Account
     return total
   end
 
+  #Calcutes the remaining amount of cash left
   def leftover
     return @cash - self.spent
   end
 
+  #Has each target allocation calculated, and then optimized
   def allocate
     @allocations.each { |allocation| allocation.buy(self.cash) }
     self.optimize
   end
 
+  # Once allocations are calculated, this method attempts to optimize the buys. It takes the amount of cash leftover in the account and calculates how many of each asset can be bought. Then, it calculates which additional buy will bring the total purchase closest to the total cash value of the account. Finding this, it makes the additional purchases.
   def optimize
     
     closest = []
@@ -37,6 +41,7 @@ class Account
     @allocations.find { |allocation| allocation.add(best_option[:number_of_stocks]) if best_option[:name].to_s == allocation.asset_name }
   end
 
+  # Prints the results of the buys
   def print_results
     total = self.spent
     puts "Account #{@id}"
