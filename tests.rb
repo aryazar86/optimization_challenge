@@ -1,4 +1,4 @@
-require 'allocation_challenge'
+require './allocation_challenge.rb'
 require 'minitest/autorun'
 
 class TestAllocationChallenge < Minitest::Test
