@@ -16,7 +16,5 @@ Seeing the results based on the inputs, however, I find that the optimal set of 
 If refactoring, I would look into dynamic programming options like the KnapSack or Bin Packing algorthimn to find a more optimal set of purchases.
 
 To run in Terminal:
-
 1) To get the optimal set of buys, type ruby allocation_challenge.rb.
-
 2) To run tests, type ruby tests.rb.
