@@ -6,8 +6,11 @@ Create a trading module. Each customer has a cash balance and a target portfolio
 Walkthrough:
 Each customer has an Account, and under each account are Allocation objects that hold te specific allocation per asset for that customer. Assets are global objects created based on the asset name and price.
 
-Customer's allocations are then calculated based on the targets set by each asset allocation. Once allocations are calculated, an "optimize" attempts to optimize the buys for each customer. It takes the amount of cash leftover in the account and calculates how many of each asset can be bought. Then, it calculates which additional buy will bring the total purchase closest to the total cash value of the account. Finding this, it makes the additional purchases.
+Customers' allocations are then calculated based the target percentage they are looking for their portfolios to have of each asset. Once allocations are calculated,I optimize the buys for each customer. Taking into the amount of cash leftover in the account, this method calculates how many more of each asset can be bought with it. Then, it calculates which of these additional buys will bring the total purchase closest to the total cash value of the account. Finding this, it makes the additional purchases.
 
 Trade-Offs:
-The main trade-off here is that in optimzing, I am purchasing more the one asset that will bring me closest to the account cash reserves. This is in place of finding a collection of different assets to might bring me even closer to the cash amount.
+The main trade-off here is that in optimizing, I am purchasing more the one asset that will bring me closest to the account's cap spending. This is instead of finding a collection of different assets to might bring me even closer to the cash amount. This also skews the  asset chosen for further purchases against its targets. 
 
+Seeing the results based on the inputs, however, I find that the optimal set of buys has been achieved as each aspect of the challenge was met: (1) keeping allocations as close as possible to their targets and (2) not spending more money than the client already has. 
+
+If refactoring, I would look into dynamic programming options like the KnapSack or Bin Packing algorthimn to find a more optimal set of purchases.
